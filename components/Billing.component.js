@@ -1,4 +1,4 @@
-import FadeText from "../helpers/FadeText.js";
+// import FadeText from "../helpers/FadeText.js";
 import { apple, bill, google } from "../public/assets/index.js"
 import { m, LazyMotion, useInView, useWillChange } from "framer-motion";
 import { useRef, useEffect } from "react";
@@ -38,11 +38,11 @@ const Billing = () => {
           Easily control your <br className="hidden sm:block"/> billing & invoicing
         </m.h2>
         <div className="font-poppins text-white/70 text-lg leading-[30px] max-w-[470px] mt-5">
-          <FadeText begin={isInView}>
+          {/* <FadeText begin={isInView}>
             Elit enim sed massa etiam. Mauris eu adipiscing ultrices ametodio
             aenean neque. Fusce ipsum orci rhoncus aliporttitor integer platea
             placerat.
-          </FadeText>
+          </FadeText> */}
         </div>
         <div className="flex flex-wrap gap-4 mt-6 sm:mt-10">
             <m.div

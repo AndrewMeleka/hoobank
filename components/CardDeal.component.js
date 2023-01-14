@@ -1,4 +1,4 @@
-import FadeText from "../helpers/FadeText.js";
+// import FadeText from "../helpers/FadeText.js";
 import { m, LazyMotion, useInView, useWillChange } from "framer-motion";
 import { card } from "../public/assets/index.js";
 import { useRef, useEffect } from "react";
@@ -23,11 +23,11 @@ const CardDeal = () => {
           Find a better card deal <br className="hidden sm:block"/> in few easy step
         </m.h2>
         <div className="font-poppins text-white/70 text-lg leading-[30px] max-w-[470px] mt-5">
-          <FadeText begin={isInView}>
+          {/* <FadeText begin={isInView}>
             Elit enim sed massa etiam. Mauris eu adipiscing ultrices ametodio
             aenean neque. Fusce ipsum orci rhoncus aliporttitor integer platea
             placerat.
-          </FadeText>
+          </FadeText> */}
         </div>
         <m.div
           style={{ willChange }}

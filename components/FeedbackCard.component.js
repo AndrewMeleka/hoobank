@@ -1,4 +1,4 @@
-import FadeText from "../helpers/FadeText.js";
+// import FadeText from "../helpers/FadeText.js";
 import { quotes } from "../public/assets/index.js"
 import { m, LazyMotion, useWillChange } from "framer-motion";
 import Image from "next/image";
@@ -24,7 +24,7 @@ const FeedbackCard = ({ name, title, content, img, delay, cardCtrl, inView }) =>
     >
       <Image src={quotes} alt="double quotes" className="w-[42px] h-[27px] object-contain"/>
       <div className="font-poppins text-lg leading-8 text-white my-10">
-        <FadeText begin={inView}>{content}</FadeText>
+        {/* <FadeText begin={inView}>{content}</FadeText> */}
       </div>
       <div className="flex">
         <Image src={img} alt={name} className="w-12 h-12 rounded-full"/>

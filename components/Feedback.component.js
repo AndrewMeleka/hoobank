@@ -1,4 +1,4 @@
-import FadeText from "../helpers/FadeText.js";
+// import FadeText from "../helpers/FadeText.js";
 import FeedbackCard from "./FeedbackCard.component.js";
 import { m, LazyMotion, useInView, useWillChange } from "framer-motion";
 import { useRef } from "react";
@@ -26,10 +26,10 @@ const Feedback = () => {
         </LazyMotion>
         <div className="w-full">
           <div className="font-poppins text-white/70 text-lg leading-[30px] text-center mx-auto max-w-[450px]">
-            <FadeText begin={isInView}>
+            {/* <FadeText begin={isInView}>
               Everything you need to accept card payments and grow your business
               anywhere on the planet.
-            </FadeText>
+            </FadeText> */}
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { m, LazyMotion, useAnimationControls, useInView, useWillChange } from "framer-motion";
-import loadFeatures from "../helpers/MotionFeatures";
-//const loadFeatures = await import("../helpers/MotionFeatures")
+//import loadFeatures from "../helpers/MotionFeatures";
+const loadFeatures = await import("../helpers/MotionFeatures")
 
 const MessageBox = () => {
   const ref = useRef(null);
@@ -21,7 +21,7 @@ const MessageBox = () => {
   useEffect(() => {
     if(isInView) animSeq();
   }, [isInView]);
-  */
+  
 
   const variants = {
     start: {
@@ -30,7 +30,7 @@ const MessageBox = () => {
       transition: { duration: 1 }
     }
   };
-
+*/
   return (
     <section ref={ref} className="flex flex-col sm:flex-row justify-center items-center my-6 sm:my-16 px-6 sm:px-16 py-8 sm:py-12 bg-black-gradient-2 rounded-[20px] box-shadow">
       <LazyMotion features={loadFeatures}>
