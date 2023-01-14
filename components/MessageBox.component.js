@@ -1,11 +1,10 @@
 import { useEffect, useRef } from "react";
-import { m, LazyMotion, useAnimationControls, useInView, useWillChange } from "framer-motion";
+import { m, LazyMotion, useWillChange } from "framer-motion";
 //import loadFeatures from "../helpers/MotionFeatures";
-const loadFeatures = await import("../helpers/MotionFeatures")
+// const loadFeatures = await import("../helpers/MotionFeatures")
 
 const MessageBox = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
   const willChange = useWillChange();
 /*
   const headCtrl = useAnimationControls();
@@ -33,7 +32,7 @@ const MessageBox = () => {
 */
   return (
     <section ref={ref} className="flex flex-col sm:flex-row justify-center items-center my-6 sm:my-16 px-6 sm:px-16 py-8 sm:py-12 bg-black-gradient-2 rounded-[20px] box-shadow">
-      <LazyMotion features={loadFeatures}>
+      {/* <LazyMotion features={loadFeatures}> */}
       <div className="flex-1 flex flex-col">
         <m.h2
           className="font-poppins font-semibold text-[40px] sm:text-[48px] text-white leading-[66px] sm:leading-[76px] w-full"
@@ -64,7 +63,7 @@ const MessageBox = () => {
       >
         <button className="font-poppins font-medium text-lg text-[#00040f] py-4 px-6 rounded-[10px] capitalize bg-blue-gradient hover:brightness-75 ease-in duration-150">get started</button>
       </m.div>
-      </LazyMotion>
+      {/* </LazyMotion> */}
     </section>
   );
 };
