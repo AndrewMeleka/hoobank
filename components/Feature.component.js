@@ -9,8 +9,8 @@ const Feature = ({ icon, title, content, delay, featureCtrl }) => {
   <LazyMotion features={loadFeatures}>
   <m.div
     className="flex flex-col justify-center items-center sm:flex-row sm:justify-start sm:items-start p-6 rounded-[20px] mb-6 last:mb-0 cursor-default feature"
-    initial={{ x: 800, opacity: 0 }}
-    animate={ featureCtrl }
+    /*initial={{ x: 800, opacity: 0 }}*/
+    /*animate={ featureCtrl }*/
     transition={{ duration: 1.2, delay }}
     style={{ willChange }}
   >

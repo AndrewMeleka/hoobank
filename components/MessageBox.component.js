@@ -7,7 +7,7 @@ const MessageBox = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const willChange = useWillChange();
-
+/*
   const headCtrl = useAnimationControls();
   const paraCtrl = useAnimationControls();
   const btnCtrl = useAnimationControls();
@@ -21,6 +21,7 @@ const MessageBox = () => {
   useEffect(() => {
     if(isInView) animSeq();
   }, [isInView]);
+  */
 
   const variants = {
     start: {
@@ -36,18 +37,18 @@ const MessageBox = () => {
       <div className="flex-1 flex flex-col">
         <m.h2
           className="font-poppins font-semibold text-[40px] sm:text-[48px] text-white leading-[66px] sm:leading-[76px] w-full"
-          initial={{ opacity: 0, scale: 0 }}
-          variants={variants}
-          animate={headCtrl}
+          //initial={{ opacity: 0, scale: 0 }}
+          //variants={variants}
+          //animate={headCtrl}
           style={{ willChange }}
         >
           {`Let's try our service now`}
         </m.h2>
         <m.p
           className="font-poppins text-white/70 text-lg leading-[30px] max-w-[470px] mt-5"
-          initial={{ opacity: 0, scale: 0 }}
-          variants={variants}
-          animate={paraCtrl}
+          //initial={{ opacity: 0, scale: 0 }}
+          //variants={variants}
+          //animate={paraCtrl}
           style={{ willChange }}
         >
           Everything you need to accept card payments and grow your business
@@ -56,9 +57,9 @@ const MessageBox = () => {
       </div>
       <m.div
         className="flex justify-center items-center ml-0 sm:ml-10 mt-10 sm:mt-0"
-        initial={{ opacity: 0, scale: 0 }}
-        variants={variants}
-        animate={btnCtrl}
+        //initial={{ opacity: 0, scale: 0 }}
+        //variants={variants}
+        //animate={btnCtrl}
         style={{ willChange }}
       >
         <button className="font-poppins font-medium text-lg text-[#00040f] py-4 px-6 rounded-[10px] capitalize bg-blue-gradient hover:brightness-75 ease-in duration-150">get started</button>

@@ -18,8 +18,8 @@ const FeedbackCard = ({ name, title, content, img, delay, cardCtrl, inView }) =>
     <LazyMotion features={loadFeatures}>
     <m.div
       className="flex justify-between flex-col px-6 sm:px-10 py-7 sm:py-12 rounded-[20px] max-w-[370px] md:mr-10 sm:mr-5 mr-0 my-5 last:mr-0 bg-transparent cursor-default feedback-card"
-      {...animProps}
-      animate={ cardCtrl }
+      /*{...animProps}
+      animate={ cardCtrl }*/
       style={{ willChange }}
     >
       <Image src={quotes} alt="double quotes" className="w-[42px] h-[27px] object-contain"/>

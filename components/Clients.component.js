@@ -11,12 +11,12 @@ const Clients = () => {
   const isInView = useInView(clientsRef, { once: true });
   const willChange = useWillChange();
 
-  const ctrl = useAnimationControls();
-
+  //const ctrl = useAnimationControls();
+/*
   useEffect(() => {
     if(isInView) ctrl.start({ opacity: 1, scale: [1.5, 1] });
   }, [isInView, ctrl]);
-
+*/
   return (
     <section ref={clientsRef} className="flex justify-center items-center mb-8 py-6">
       <div className="flex justify-center items-center gap-8 flex-wrap w-full">
@@ -25,9 +25,9 @@ const Clients = () => {
             <LazyMotion features={loadFeatures}>
             <m.div
               className="sm:w-[192px] w-[150px]"
-              initial={{ opacity: 0, scale: 0 }}
-              transition={{ duration: 0.7, delay: idx * 0.7 }}
-              animate={ctrl}
+              //initial={{ opacity: 0, scale: 0 }}
+              //transition={{ duration: 0.7, delay: idx * 0.7 }}
+              //animate={ctrl}
               style={{ willChange }}
             >
                 <Image src={logo} alt={`client-${idx}`} className="w-full object-contain"/>

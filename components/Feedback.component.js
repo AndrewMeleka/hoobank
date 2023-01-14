@@ -1,7 +1,7 @@
 import FadeText from "../helpers/FadeText.js";
 import FeedbackCard from "./FeedbackCard.component.js";
-import { m, LazyMotion, useAnimationControls, useInView, useWillChange } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { m, LazyMotion, useInView, useWillChange } from "framer-motion";
+import { useRef } from "react";
 import { feedback } from "../data/feedback.data.js";
 import loadFeatures from "../helpers/MotionFeatures";
 
@@ -9,21 +9,8 @@ import loadFeatures from "../helpers/MotionFeatures";
 
 const Feedback = () => {
   const feedbackRef = useRef(null);
-  const isInView = useInView(feedbackRef, { once: true });
   const willChange = useWillChange();
-
-
-  const headCtrl = useAnimationControls();
-  const cardCtrl = useAnimationControls();
-
-  const animSeq = async () => {
-    await headCtrl.start({ opacity: 1, scale: [1.5, 1] })
-    cardCtrl.start({ opacity: 1 });
-  };
-
-  useEffect(() => {
-    if(isInView) animSeq();
-  }, [isInView]);
+  const isInView = useInView(feedbackRef, { once: true });
 
   return (
     <section ref={feedbackRef} id="clients" className="relative flex flex-col justify-center items-center mb-12 py-10">
@@ -32,9 +19,6 @@ const Feedback = () => {
         <LazyMotion features={loadFeatures}>
         <m.h1
           className="font-poppins font-semibold text-[40px] sm:text-[48px] text-white leading-[66px] sm:leading-[76px] w-full text-center"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={headCtrl}
-          transition={{ duration: 1 }}
           style={{ willChange }}
         >
           What people are <br className="hidden sm:block" /> saying about us
@@ -55,7 +39,7 @@ const Feedback = () => {
             key={id}
             {...rest}
             delay={idx}
-            cardCtrl={cardCtrl}
+            /*cardCtrl={cardCtrl}*/
             inView={isInView}
           />
         ))}

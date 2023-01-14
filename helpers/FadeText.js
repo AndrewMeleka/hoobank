@@ -5,12 +5,14 @@ import loadFeatures from "../helpers/MotionFeatures";
 //const loadFeatures = () => import("../helpers/MotionFeatures").then(res => res.default)
 
 const FadeText = ({ children, begin }) => {
-  const ctrl = useAnimationControls();
+  //const ctrl = useAnimationControls();
 
+  /*
   useEffect(() => {
     if(begin) ctrl.start("visible");
     if(!begin) ctrl.start("hidden");
   }, [begin]);
+  */
 
   const paraAnim = {
     hidden: {},
@@ -54,7 +56,7 @@ const FadeText = ({ children, begin }) => {
 
   return (
     <LazyMotion features={loadFeatures}>
-    <m.p animate={ctrl} initial='hidden' variants={paraAnim}>
+    <m.p /*animate={ctrl} initial='hidden'*/ variants={paraAnim}>
       { finalArr.map((word, idx) => {
         return(
         <m.span

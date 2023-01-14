@@ -1,35 +1,13 @@
 import { useRef, useEffect } from "react";
 import { arrow_up, discount, robot } from "../public/assets/index.js";
-import { m, LazyMotion, useInView, useAnimationControls, useWillChange } from "framer-motion";
+import { m, LazyMotion, useWillChange } from "framer-motion";
 import Image from "next/image";
 import useWindowSize from "../hooks/useWindowSize.js";
 import loadFeatures from "../helpers/MotionFeatures";
 
 const Intro = () => {
   const introRef = useRef(null);
-  const isInView = useInView(introRef, { once: true });
   const willChange = useWillChange();
-
-  const headCtrl_1 = useAnimationControls();
-  const headCtrl_2 = useAnimationControls();
-  const headCtrl_3 = useAnimationControls();
-  const paraCtrl = useAnimationControls();
-  const discCtrl = useAnimationControls();
-  const btnCtrl = useAnimationControls();
- 
-  const animSeq = async () => {
-    await headCtrl_1.start({ opacity: 1, scale: 1 });
-    await headCtrl_2.start({ opacity: 1, scale: [1.5, 1] });
-    await headCtrl_3.start({ opacity: 1, scale: 1 });
-    await paraCtrl.start({ opacity: 1, scale: 1 });
-    await discCtrl.start({ opacity: 1, scale: 1 });
-    btnCtrl.start({ opacity: 1, scale: [1.5, 1, 1.3, 1] });
-  }
-
-  useEffect(() => {
-    if(isInView) animSeq();
-  }, [isInView]);
-
   const windowSize = useWindowSize();
   const imagePrior = useRef(true);
   useEffect(() => {
@@ -44,8 +22,6 @@ const Intro = () => {
     <div className="flex-1 flex flex-col justify-center items-start px-6 sm:px-16 lg:px-0">
       <m.div
         className="flex items-center py-[6px] px-4 bg-discount-gradient rounded-[10px] mb-2 cursor-default"
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={discCtrl}
         transition={{ duration: 0.5 }}
         style={{ willChange }}
       >
@@ -61,9 +37,6 @@ const Intro = () => {
         <div>
           <m.h1
             className="font-poppins font-semibold text-white capitalize text-[46px] sm:text-[72px] leading-[60px] sm:leading-[100px]"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={headCtrl_1}
-            transition={{ duration: 0.8 }}
             style={{ willChange }}
           >
             {`the next `} 
@@ -71,9 +44,6 @@ const Intro = () => {
           </m.h1>
           <m.h1
             className="font-poppins font-semibold text-white capitalize text-[46px] sm:text-[72px] leading-[60px] sm:leading-[100px] text-blue-gradient"
-            initial={{ opacity: 0, scale: 0 }}
-            animate={headCtrl_2}
-            transition={{ duration: 0.8 }}     
             style={{ willChange }}       
           >
             generation
@@ -81,9 +51,6 @@ const Intro = () => {
         </div>
         <m.div
           className="hidden md:flex lg:mx-4"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={btnCtrl}
-          transition={{ duration: 0.8, damping: 3}}
           style={{ willChange }}
         >
           <m.button
@@ -103,18 +70,12 @@ const Intro = () => {
       </div>
       <m.h1
         className="font-poppins font-semibold text-white capitalize text-[46px] sm:text-[72px] leading-[60px] sm:leading-[100px] w-full"
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={headCtrl_3}
-        transition={{ duration: 0.8 }}
         style={{ willChange }}
       >
         Payment method.
       </m.h1>
       <m.p
         className="font-poppins text-white/70 text-lg leading-[30.8px] max-w-[470px] mt-5"
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={paraCtrl}
-        transition={{ duration: 0.6 }}
         style={{ willChange }}
       >
         Our team of experts uses a methodology to identify the credit cards
