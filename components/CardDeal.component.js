@@ -1,15 +1,13 @@
 // import FadeText from "../helpers/FadeText.js";
-import { m, LazyMotion, useInView, useWillChange } from "framer-motion";
+import { m, LazyMotion } from "framer-motion";
 import { card } from "../public/assets/index.js";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 
 const loadFeatures = () => import("../helpers/MotionFeatures").then(res => res.default)
 
 const CardDeal = () => {
     const ref = useRef(null)
-    const isInView = useInView(ref, { once: true });
-    const willChange = useWillChange();
   
 
    return (
@@ -18,7 +16,6 @@ const CardDeal = () => {
       <div className="flex-1 flex flex-col justify-center">
         <m.h2
           className="font-poppins font-semibold text-[40px] sm:text-[48px] text-white leading-[66px] sm:leading-[76px] w-full"
-          style={{ willChange }}
         >
           Find a better card deal <br className="hidden sm:block"/> in few easy step
         </m.h2>
@@ -30,7 +27,6 @@ const CardDeal = () => {
           </FadeText> */}
         </div>
         <m.div
-          style={{ willChange }}
         >
           <button className="font-poppins font-medium text-lg text-[#00040f] mt-10 py-4 px-6 rounded-[10px] capitalize bg-blue-gradient hover:brightness-75 ease-in duration-150">get started</button>
         </m.div>
@@ -38,7 +34,6 @@ const CardDeal = () => {
       <div className="flex-1 relative flex justify-center items-center ml-0 mt-10 md:ml-10 md:mt-0">
         <m.div
           className="w-full h-full"
-          style={{ willChange }}
         >
             <Image src={card} alt="card" className="w-full h-full object-contain" width={620} height="auto"/>
         </m.div>

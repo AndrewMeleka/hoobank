@@ -1,11 +1,10 @@
 import { useEffect, useRef } from "react";
-import { m, LazyMotion, useWillChange } from "framer-motion";
+import { m } from "framer-motion";
 //import loadFeatures from "../helpers/MotionFeatures";
 // const loadFeatures = await import("../helpers/MotionFeatures")
 
 const MessageBox = () => {
   const ref = useRef(null);
-  const willChange = useWillChange();
 /*
   const headCtrl = useAnimationControls();
   const paraCtrl = useAnimationControls();
@@ -39,7 +38,6 @@ const MessageBox = () => {
           //initial={{ opacity: 0, scale: 0 }}
           //variants={variants}
           //animate={headCtrl}
-          style={{ willChange }}
         >
           {`Let's try our service now`}
         </m.h2>
@@ -48,7 +46,6 @@ const MessageBox = () => {
           //initial={{ opacity: 0, scale: 0 }}
           //variants={variants}
           //animate={paraCtrl}
-          style={{ willChange }}
         >
           Everything you need to accept card payments and grow your business
           anywhere on the planet.
@@ -59,7 +56,6 @@ const MessageBox = () => {
         //initial={{ opacity: 0, scale: 0 }}
         //variants={variants}
         //animate={btnCtrl}
-        style={{ willChange }}
       >
         <button className="font-poppins font-medium text-lg text-[#00040f] py-4 px-6 rounded-[10px] capitalize bg-blue-gradient hover:brightness-75 ease-in duration-150">get started</button>
       </m.div>

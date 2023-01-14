@@ -1,13 +1,12 @@
 // import FadeText from "../helpers/FadeText.js";
 import { quotes } from "../public/assets/index.js"
-import { m, LazyMotion, useWillChange } from "framer-motion";
+import { m, LazyMotion } from "framer-motion";
 import Image from "next/image";
 import loadFeatures from "../helpers/MotionFeatures";
 
 //const loadFeatures = () => import("../helpers/MotionFeatures").then(res => res.default)
 
 const FeedbackCard = ({ name, title, content, img, delay, cardCtrl, inView }) => {
-  const willChange = useWillChange();
 
   const animProps = {
     initial: { opacity: 0 },
@@ -20,7 +19,6 @@ const FeedbackCard = ({ name, title, content, img, delay, cardCtrl, inView }) =>
       className="flex justify-between flex-col px-6 sm:px-10 py-7 sm:py-12 rounded-[20px] max-w-[370px] md:mr-10 sm:mr-5 mr-0 my-5 last:mr-0 bg-transparent cursor-default feedback-card"
       /*{...animProps}
       animate={ cardCtrl }*/
-      style={{ willChange }}
     >
       <Image src={quotes} alt="double quotes" className="w-[42px] h-[27px] object-contain"/>
       <div className="font-poppins text-lg leading-8 text-white my-10">

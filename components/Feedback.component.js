@@ -1,6 +1,6 @@
 // import FadeText from "../helpers/FadeText.js";
 import FeedbackCard from "./FeedbackCard.component.js";
-import { m, LazyMotion, useInView, useWillChange } from "framer-motion";
+import { m, LazyMotion } from "framer-motion";
 import { useRef } from "react";
 import { feedback } from "../data/feedback.data.js";
 import loadFeatures from "../helpers/MotionFeatures";
@@ -9,8 +9,7 @@ import loadFeatures from "../helpers/MotionFeatures";
 
 const Feedback = () => {
   const feedbackRef = useRef(null);
-  const willChange = useWillChange();
-  const isInView = useInView(feedbackRef, { once: true });
+
 
   return (
     <section ref={feedbackRef} id="clients" className="relative flex flex-col justify-center items-center mb-12 py-10">
@@ -19,7 +18,6 @@ const Feedback = () => {
         <LazyMotion features={loadFeatures}>
         <m.h1
           className="font-poppins font-semibold text-[40px] sm:text-[48px] text-white leading-[66px] sm:leading-[76px] w-full text-center"
-          style={{ willChange }}
         >
           What people are <br className="hidden sm:block" /> saying about us
         </m.h1>
@@ -40,7 +38,6 @@ const Feedback = () => {
             {...rest}
             delay={idx}
             /*cardCtrl={cardCtrl}*/
-            inView={isInView}
           />
         ))}
       </div>

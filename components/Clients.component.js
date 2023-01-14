@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 import { clients } from "../data/clients.data.js";
-import { m, LazyMotion, useAnimationControls, useInView, useWillChange } from "framer-motion";
+import { m, LazyMotion } from "framer-motion";
 import Image from "next/image";
 import loadFeatures from "../helpers/MotionFeatures";
 
@@ -8,8 +8,6 @@ import loadFeatures from "../helpers/MotionFeatures";
 
 const Clients = () => {
   const clientsRef = useRef(null)
-  const isInView = useInView(clientsRef, { once: true });
-  const willChange = useWillChange();
 
   //const ctrl = useAnimationControls();
 /*
@@ -28,7 +26,6 @@ const Clients = () => {
               //initial={{ opacity: 0, scale: 0 }}
               //transition={{ duration: 0.7, delay: idx * 0.7 }}
               //animate={ctrl}
-              style={{ willChange }}
             >
                 <Image src={logo} alt={`client-${idx}`} className="w-full object-contain"/>
             </m.div>

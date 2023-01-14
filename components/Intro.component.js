@@ -1,13 +1,12 @@
 import { useRef, useEffect } from "react";
 import { arrow_up, discount, robot } from "../public/assets/index.js";
-import { m, LazyMotion, useWillChange } from "framer-motion";
+import { m, LazyMotion } from "framer-motion";
 import Image from "next/image";
 import useWindowSize from "../hooks/useWindowSize.js";
 import loadFeatures from "../helpers/MotionFeatures";
 
 const Intro = () => {
   const introRef = useRef(null);
-  const willChange = useWillChange();
   const windowSize = useWindowSize();
   const imagePrior = useRef(true);
   useEffect(() => {
@@ -23,7 +22,6 @@ const Intro = () => {
       <m.div
         className="flex items-center py-[6px] px-4 bg-discount-gradient rounded-[10px] mb-2 cursor-default"
         transition={{ duration: 0.5 }}
-        style={{ willChange }}
       >
         <Image src={discount} alt="discount" className="w-8 h-8"/>
         <p className="font-poppins text-white/70 text-lg leading-[30.8px] ml-2">
@@ -37,21 +35,18 @@ const Intro = () => {
         <div>
           <m.h1
             className="font-poppins font-semibold text-white capitalize text-[46px] sm:text-[72px] leading-[60px] sm:leading-[100px]"
-            style={{ willChange }}
           >
             {`the next `} 
             <br className="hidden sm:block" />
           </m.h1>
           <m.h1
-            className="font-poppins font-semibold text-white capitalize text-[46px] sm:text-[72px] leading-[60px] sm:leading-[100px] text-blue-gradient"
-            style={{ willChange }}       
+            className="font-poppins font-semibold text-white capitalize text-[46px] sm:text-[72px] leading-[60px] sm:leading-[100px] text-blue-gradient"     
           >
             generation
           </m.h1>
         </div>
         <m.div
           className="hidden md:flex lg:mx-4"
-          style={{ willChange }}
         >
           <m.button
             className="flex justify-center items-center w-[140px] h-[140px] rounded-full bg-blue-gradient p-0.5 cursor-pointer"
@@ -70,13 +65,11 @@ const Intro = () => {
       </div>
       <m.h1
         className="font-poppins font-semibold text-white capitalize text-[46px] sm:text-[72px] leading-[60px] sm:leading-[100px] w-full"
-        style={{ willChange }}
       >
         Payment method.
       </m.h1>
       <m.p
         className="font-poppins text-white/70 text-lg leading-[30.8px] max-w-[470px] mt-5"
-        style={{ willChange }}
       >
         Our team of experts uses a methodology to identify the credit cards
         most likely to fit your needs. We examine annual percentage rates,

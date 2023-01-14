@@ -1,15 +1,13 @@
 // import FadeText from "../helpers/FadeText.js";
 import { apple, bill, google } from "../public/assets/index.js"
-import { m, LazyMotion, useInView, useWillChange } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { m, LazyMotion } from "framer-motion";
+import { useRef } from "react";
 import Image from "next/image";
 
 const loadFeatures = () => import("../helpers/MotionFeatures").then(res => res.default)
 
 const Billing = () => {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true });
-  const willChange = useWillChange();
   /*
   useEffect(() => {
     if(isInView) animSeq();
@@ -23,7 +21,6 @@ const Billing = () => {
       <div className="flex-1 relative flex justify-center items-center mr-0 mt-10 md:mr-10 md:mt-0">
         <m.div
           className="w-full h-full relative z-50"
-          style={{ willChange }}
         >
             <Image src={bill} alt="billing" className="w-full h-full object-contain" width={620} height="auto"/>
         </m.div>
@@ -33,7 +30,6 @@ const Billing = () => {
       <div className="flex-1 flex flex-col justify-center">
         <m.h2
           className="font-poppins font-semibold text-[40px] sm:text-[48px] text-white leading-[66px] sm:leading-[76px] w-full"
-          style={{ willChange }}
         >
           Easily control your <br className="hidden sm:block"/> billing & invoicing
         </m.h2>
@@ -47,13 +43,11 @@ const Billing = () => {
         <div className="flex flex-wrap gap-4 mt-6 sm:mt-10">
             <m.div
               className="w-[128px] h-[42px] cursor-pointer"
-              style={{ willChange }}
             >
                 <Image src={apple} alt="AppStore" className="w-full h-full object-contain"/>
             </m.div>
             <m.div
               className="w-[128px] h-[42px] cursor-pointer"
-              style={{ willChange }}
             >
                 <Image src={google} alt="PlayStore" className="w-full h-full object-contain"/>
             </m.div>
